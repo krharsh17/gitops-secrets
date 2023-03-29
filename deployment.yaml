@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-deploy
+  namespace: secrets-test
 spec:
   replicas: 1
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app-demo
-          image: hrittik/test-tester:latest
+          image: krharsh17/test-tester:latest
           ports:
            - containerPort: 5000
           env:
